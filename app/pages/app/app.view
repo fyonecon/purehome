@@ -45,7 +45,7 @@
         <div class="app-txt">
           <div class="app-txt-txt font-title">iOS / iPadOS / Android</div>
           <div class="app-txt-dl font-text break">
-            <div class=" app-txt-dl-btn">Web</div>
+            <div class=" app-txt-dl-btn font-blue click a-click" data-href="https://fyonecon.github.io/purehome/app/?route=home" title="Visit">Web（PWA）</div>
           </div>
         </div>
       </div>
