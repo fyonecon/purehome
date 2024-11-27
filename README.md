@@ -1,6 +1,6 @@
 ## ⚠️本项目只在Git-hub、bit-bucket上官更，其他网站上的都是盗版。
 
-## PureWork（PureHome）
+## PureHome
 PureHome，替代浏览器主页 & 局域网跨设备分享文件。 
 
 PureHome, Replace Browser Homepage & Sharing Files Across Devices In Your LAN Network.
@@ -16,7 +16,7 @@ PureHome, Replace Browser Homepage & Sharing Files Across Devices In Your LAN Ne
 🎉🎉🎉
 
 ## Download
-👉 https://github.com/fyonecon/PureHome/releases/tag/v5
+👉 https://github.com/fyonecon/purehome/releases/tag/v5
 
 🎉🎉🎉
 
