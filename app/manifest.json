@@ -1,7 +1,7 @@
 {
-  "name": "PureHome PWA",
-  "short_name": "PureHome PWA",
-  "start_url": "./?from=app&utm_source=pwa",
+  "name": "PureHome",
+  "short_name": "PureHome",
+  "start_url": "./?route=home&from=app&utm_source=pwa",
   "display": "standalone",
   "background_color": "#000",
   "description": "",
