@@ -6,7 +6,7 @@ PureHome，替代浏览器主页 & 局域网跨设备分享文件。
 PureHome, Replace Browser Homepage & Sharing Files Across Devices In Your LAN Network.
 
 ## Detail
-👉 http://purehome.cc
+👉 https://fyonecon.github.io/purehome/
 
 ## Show
 ![Homepage](./en/home.png "Homepage主页")
@@ -16,7 +16,7 @@ PureHome, Replace Browser Homepage & Sharing Files Across Devices In Your LAN Ne
 🎉🎉🎉
 
 ## Download
-👉 https://github.com/fyonecon/PureWork/releases/tag/v5.0.0
+👉 https://github.com/fyonecon/PureHome/releases/tag/v5
 
 🎉🎉🎉
 
