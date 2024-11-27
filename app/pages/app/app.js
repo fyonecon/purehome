@@ -56,8 +56,8 @@ $(document).on("click", ".app-click", function (){
         home_href = "./";
     }else if (view.is_local_ipv4()){
         home_href = "./";
-    }else{
-        home_href = "./";
+    }else{ //web
+        home_href = "../";
     }
     view.window_open(home_href, "_self");
 });
