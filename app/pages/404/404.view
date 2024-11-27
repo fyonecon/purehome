@@ -1,0 +1,14 @@
+<div class="page-content" style="position: relative;">
+
+    <div class="center" style="--wails-draggable:drag">
+        <img class="img-404" src="" data-src="404.png" />
+        <h2 class="font-class font-white">页面404，请检查链接、内容是否有效。</h2>
+         <h2 class="font-class font-white show-error_url"></h2>
+        <br>
+        <div>
+            <a class="a-click click select-none" data-href="./?from=404" data-target="_self"><span class="font-title font-light_blue click"><i class="fas fa-angle-left "></i>&nbsp;&nbsp;返回首页 </span></a>
+        </div>
+    </div>
+
+
+</div>

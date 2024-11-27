@@ -1,0 +1,15 @@
+{
+  "name": "PureHome PWA",
+  "short_name": "PureHome PWA",
+  "start_url": "./?from=app&utm_source=pwa",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "",
+  "icons": [
+    {
+      "src": "./img/launcher.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

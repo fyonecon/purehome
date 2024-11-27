@@ -1,0 +1,156 @@
+
+.app-show-box {
+    padding: 20px 20px;
+    width: calc(100% - 40px);
+    max-width: 1440px;
+    margin: 0 auto;
+    height: calc(100% - 40px - 10px);
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+}
+
+.app-box-item{
+    letter-spacing: 1px;
+    width: 100%;
+    background-color: rgba(115,115,115,0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.app-box-item-div-logo{
+    float: left;
+    width: 33.33%;
+}
+.app-box-item-div-info{
+    float: left;
+    width: calc(100% - 33.33%);
+}
+
+.app-box-item-div-dl{
+    float: left;
+    text-align: center;
+    width: calc(33.33% - 1px);
+    border-right: 1px solid rgba(30,30,30,1);
+    border-bottom: 0 solid rgba(30,30,30,1);
+}
+.app-box-item-div-dl:last-child{
+    border-right: 0 solid rgba(30,30,30,1);
+    border-bottom: 0 solid rgba(30,30,30,1);
+}
+
+.app-box-item-div-cover{
+    width: calc(100% - 33.33%);
+    float: left;
+}
+.app-box-item-div-txt{
+    width: 33.33%;
+    float: left;
+}
+
+/**/
+@media only screen and (max-width: 520px) {
+    .app-box-item{
+        width: 100%;
+    }
+    .app-box-item-div-logo{
+        width: 100%;
+    }
+    .app-box-item-div-info{
+        width: 100%;
+    }
+    .app-box-item-div-dl{
+        width: 100%;
+        border-right: 0 solid rgba(30,30,30,1);
+        border-bottom: 1px solid rgba(30,30,30,1);
+    }
+    .app-box-item-div-dl:last-child{
+        width: 100%;
+        border-bottom: 0 solid rgba(30,30,30,1);
+    }
+    .app-box-item-div-cover{
+        width: 100%;
+    }
+    .app-box-item-div-txt{
+        width: 100%;
+    }
+
+}
+
+.app-txt{
+    padding: 10px 20px;
+}
+
+.app-logo{
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100px;
+}
+
+.app-name{
+    font-size: 22px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+.app-txt-txt{
+    font-size: 22px;
+    line-height: 36px;
+    padding: 10px 0;
+}
+.app-txt-dl{
+    line-height: 30px;
+    padding: 10px 0;
+}
+
+.app-img-cover{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.app-txt-dl-btn{
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+.none-right-border{
+    border-right: 0 solid rgba(30,30,30,1) !important;
+}
+.none-bottom-border{
+    border-bottom: 0 solid rgba(30,30,30,1) !important;
+}
+
+.app-box-item-div-beian{
+    padding: 0 20px;
+    line-height: 20px;
+}
+.app-box-item-div-rights{
+    width: 50%;
+    float: left;
+    opacity: 0.7;
+    padding: 15px 0;
+}
+.app-box-item-div-lang{
+    width: calc(50% - 10px);
+    float: left;
+    opacity: 0.7;
+    padding: 15px 0 0 10px;
+}
+
+.app-mac_install-title{
+    padding: 0 20px;
+    line-height: 30px;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.app-mac_install-txt{
+    padding: 0 20px;
+    line-height: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}

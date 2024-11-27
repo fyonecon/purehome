@@ -1,0 +1,127 @@
+<div class="page-content">
+
+  <div class="scroll-y-style app-show-box">
+    <!--简介-->
+    <div class="app-box-item">
+      <div class="app-box-item-div-logo">
+        <div class="app-txt click app-click" title="Back">
+          <img class="img-show app-logo select-none" data-img="launcher.png"  alt="Logo" src=""/>
+          <div class="app-name font-title font-blue"></div>
+        </div>
+      </div>
+      <div class="app-box-item-div-info">
+        <div class="app-txt">
+          <div class="app-txt-txt font-text break"><span class="lang app-lang_about"></span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <!--下载-->
+    <div class="app-box-item break">
+
+      <div class="app-box-item-div-dl">
+        <div class="app-txt">
+          <div class="app-txt-txt font-title">macOS12+</div>
+          <div class="app-txt-dl font-text break">
+            <div class="font-blue click a-click hide app-txt-dl-btn" title="Download" data-href="" data-target="_blank">Mac AppStore<span class="lang app-lang_dl"></span></div>
+            <div class="font-blue click a-click app-txt-dl-btn" title="Download" data-href="http://cdn.purehome.cc/download/v5.3.x/PureHome-universal-installer.dmg" data-target="_blank">PureHome-universal-installer.dmg<span class="lang app-lang_dl"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-box-item-div-dl">
+        <div class="app-txt">
+          <div class="app-txt-txt font-title">Win10 22H2+ / Win11+</div>
+          <div class="app-txt-dl font-text break">
+            <div class="font-blue click a-click hide app-txt-dl-btn" title="Download" data-href="" data-target="_blank">Win MSStore<span class="lang app-lang_dl"></span></div>
+            <div class="font-blue click a-click app-txt-dl-btn" title="Download" data-href="http://cdn.purehome.cc/download/v5.3.x/PureHome-amd64-installer.exe" data-target="_blank">PureHome-amd64-installer.exe<span class="lang app-lang_dl"></span></div>
+            <div class="font-blue click a-click app-txt-dl-btn hide" title="Download" data-href="http://cdn.purehome.cc/download/v5.3.x/PureHome-arm64-installer.exe" data-target="_blank">PureHome-arm64-installer.exe<span class="lang app-lang_dl"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-box-item-div-dl none-right-border none-bottom-border">
+        <div class="app-txt">
+          <div class="app-txt-txt font-title">iOS / iPadOS / Android</div>
+          <div class="app-txt-dl font-text break">
+            <div class=" app-txt-dl-btn">Web</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+    <!--安装帮助-->
+    <div class="app-box-item">
+      <div class="font-title app-mac_install-title">
+        ⚠️ <span class="lang app-lang_mac_install_title"></span>
+      </div>
+      <div class="font-text app-mac_install-txt">
+        <span class="lang app-lang_mac_install_txt"></span>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <!--截图-->
+    <div class="app-box-item">
+      <div class="app-box-item-div-cover">
+        <div class="app-txt">
+          <img class="img-show app-img-cover" data-img="home.png" alt="Cover"  src=""/>
+        </div>
+      </div>
+      <div class="app-box-item-div-txt">
+        <div class="app-txt">
+          <div class="app-txt-txt font-text break"><span class="lang app-lang_home"></span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="app-box-item">
+      <div class="app-box-item-div-cover">
+        <div class="app-txt">
+          <img class="img-show app-img-cover" data-img="lan.png" alt="Cover"  src=""/>
+        </div>
+      </div>
+      <div class="app-box-item-div-txt">
+        <div class="app-txt">
+          <div class="app-txt-txt font-text break"><span class="lang app-lang_lan"></span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="app-box-item">
+      <div class="app-box-item-div-cover">
+        <div class="app-txt">
+          <img class="img-show app-img-cover" data-img="setting.png" alt="Cover"  src=""/>
+        </div>
+      </div>
+      <div class="app-box-item-div-txt">
+        <div class="app-txt">
+          <div class="app-txt-txt font-text break"><span class="lang app-lang_setting"></span></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <!-- 版权 -->
+    <div class="app-box-item">
+      <div class="app-box-item-div-beian">
+        <div class="app-box-item-div-rights font-title"></div>
+        <div class="app-box-item-div-lang font-title">
+          <span class="click lang-btn-en font-light_blue"> EN </span> /
+          <span class="click lang-btn-zh font-light_blue"> 中 </span> /
+          <span class="click lang-btn-jp font-light_blue"> 日 </span>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="footer-dom" id="footer-dom"></div>
+
+  </div>
+
+</div>

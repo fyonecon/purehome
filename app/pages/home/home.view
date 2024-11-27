@@ -1,0 +1,52 @@
+
+<div class="home-content select-none" style="position: relative;">
+    <div class="home-drag-div" style="--wails-draggable:drag;"></div>
+    <!--code标签设置等宽字-->
+    <code>
+        <div class="content" id="content"></div>
+    </code>
+    <!--背部特效-->
+    <div class="content-bg" id="content-bg"></div>
+    <!--底部菜单-->
+    <div class="left-fixed select-none">
+        <!--记事本-->
+        <div class="rights-div notes-span font-text hide">
+            <span class="right-span a-click click right-span-hover" data-href="./?route=notes" data-target="_self" title="Notes"><span class="lang-span lang-notes"></span> </span>
+        </div>
+        <!--局域网-->
+        <div class="rights-div lan-span font-text hide">
+            <span class="right-span a-click click right-span-hover" data-href="./?route=lan" data-target="_self" title="LanService"><span class="lang-span lang-lan"></span> </span>
+        </div>
+        <!--pwa lock锁-->
+        <div class="rights-div pwa-lock-span font-text hide">
+            <span class="right-span click right-span-hover pwa-lock-btn" title="PWA Lock">🔒</span>
+        </div>
+        <!--设置-->
+        <div class="rights-div settings-span font-text hide">
+            <span class="right-span a-click click right-span-hover" data-href="./?route=setting" data-target="_self" title="Settings"> <span class="lang-span lang-setting">⚙️</span></span>
+            <span class="right-span a-click click right-span-hover" data-href="./?route=sub_app" data-target="_self" title="Sub Apps"> <i class="fa-duotone fa-grid-round-2"></i></span>
+            <span class="right-span click open_lang-span hide right-span-hover" title="Languages"> <svg viewBox="0 0 24 24" width="17" height="17" style="margin-bottom: -4px; margin-right: 2px;" aria-hidden="true" class="iconLanguage_QWls"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg><span class="lang-span lang-lang hide"></span></span>
+            <div class="right-line-div">&nbsp;</div>
+            <span class="right-span click home-div-do-notes" title="Quick Pasteboard"><i class="fa-duotone fa-paste"></i></span>
+            <span class="right-span click open_secure-span " title="App Lock"> <span class="lang-span lang-lock">🔒</span></span>
+        </div>
+    </div>
+    <!--快捷功能-->
+    <div class="right-fixed">
+        <!--QR-->
+        <div class="qr-div-div hide">
+            <div class="qr-div qr-20 select-none click" id="qr-div">
+                <img class="new-qr-img" src="" alt="QR" title="QR for This Website">
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--木鱼-->
+        <div class="muyu-div select-none font-mini hide">
+            <img class="muyu-img" alt="赛博木鱼" title="Luck"/>
+            <div id="muyu-bgm"></div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>

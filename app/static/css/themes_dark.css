@@ -1,0 +1,86 @@
+.div_theme{
+    background-color: rgba(30,30,30,1) !important;
+    color: rgba(220,220,220,1) !important;
+}
+.input_theme{
+    color: rgba(220,220,220,1) !important;
+    background-color: rgba(115,115,115,0.2) !important;
+}
+.tools-left-content{
+    color: rgba(220,220,220,1) !important;
+    background-color: rgba(115,115,115,0.2) !important;
+}
+.tools-right-content{
+    color: rgba(220,220,220,1) !important;
+}
+.sys-txt{
+    color: rgba(220,220,220,0.6) !important;
+}
+.fixed_dir-nav{
+    background-color: rgba(30,30,30,1) !important;
+}
+.item-span-btn{
+    background-color: rgba(30,30,30,1) !important;
+}
+#bg-div, #mask-div{
+    background-color: rgba(30,30,30, 0.8) !important;
+}
+.div-alert_txt-bg{
+    background-color: rgba(30,30,30, 1) !important;
+}
+.div-alert_confirm, .div-input_confirm, .back-do-content, .home-do-content, .upload-files-box, .note-content-box, .div-notice_img{
+    background-color: rgba(30,30,30,1) !important;
+    color: rgba(220,220,220,1) !important;
+    box-shadow: 0 0 20px rgba(30,30,30,1) !important;
+    border: 1px solid rgba(115,115,115,0.3) !important;
+}
+.search-lan-input{
+    color: rgba(220,220,220,1) !important;
+}
+.drop-box{
+    background-color: rgba(115,115,115,0.2) !important;
+}
+.note-box{
+    color: rgba(220,220,220,1) !important;
+}
+.div-alert_txt-box, .notice_txt-li{
+    background-color: rgba(30,30,30,1) !important;
+    color: rgba(220,220,220,1) !important;
+    box-shadow: 0 0 5px rgba(30,30,30,1) !important;
+}
+.div-alert_txt-text{
+    color: rgba(220,220,220,1) !important;
+}
+.menu-ul{
+    background: rgba(20,20,20,1) !important;
+    color: rgba(220,220,220,1) !important;
+}
+.mouse_menu-refresh, .mouse_menu-copy, .mouse_menu-paste{
+    color: rgba(220,220,220,1) !important;
+}
+.muyu-img{
+    filter: brightness(95%) !important;
+}
+
+/**/
+.div-play-songs{
+    background-color: rgba(115,115,115,0.3);
+    color: rgba(220,220,220,1);
+    padding: 2px 0;
+    border-radius: 34px;
+    margin-top: 0;
+    overflow: hidden;
+    width: 164px;
+    height: 30px;
+}
+.div-play-songs-animation{
+    animation: play_songs_animation 10s infinite ease-in-out;
+}
+@keyframes play_songs_animation {
+    0%   {background-color: rgba(115,115,115,0.3);color: rgba(220,220,220,1)}
+    20%  {background-color: rgba(85,85,85,1);color: rgba(230,230,230,1)}
+    50%  {background-color: rgba(26,114,254, 0.4);color: rgba(240,240,240,1)}
+    80%  {background-color: rgba(85,85,85,1);color: rgba(230,230,230,1)}
+    100% {background-color: rgba(115,115,115,0.3);color: rgba(220,220,220,1)}
+}
+/**/
