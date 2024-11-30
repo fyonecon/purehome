@@ -38,7 +38,7 @@ const app_url = {
 // App验证参数
 const app_class = "PureHome_"; // 必须为string，且必须唯一，推荐使用英文
 const app_name = "PureHome"; // 推荐使用英文
-const app_version = "5.4.0"; // 格式 1.0.0
+const app_version = "5.5.0"; // 格式 1.0.0
 const app_email = "";
 
 // 登录用户使用的验证参数
