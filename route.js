@@ -22,15 +22,15 @@ const pages = [
     // 开始-必要路由
     { // 页面模块
         "route"     : "",
-        "file_path" : "pages/app/app.view",
-        "title"     :  "App详情介绍",
+        "file_path" : "pages/direct/direct.view",
+        "title"     :  "请选择需要进入的页面",
         "file"      : [
             {
                 "js": [
-                    "pages/app/app.js",
+                    "pages/direct/direct.js",
                 ],
                 "css": [
-                    "pages/app/app.css",
+                    "pages/direct/direct.css",
                 ],
             },
         ],
@@ -68,6 +68,21 @@ const pages = [
     }, //
     // 结束-必要路由
 
+    { // 页面模块
+        "route"     : "app",
+        "file_path" : "pages/app/app.view",
+        "title"     :  "App详情介绍",
+        "file"      : [
+            {
+                "js": [
+                    "pages/app/app.js",
+                ],
+                "css": [
+                    "pages/app/app.css",
+                ],
+            },
+        ],
+    }, //
     { // 页面模块
         "route"     : "home",
         "file_path" : "pages/home/home.view",
