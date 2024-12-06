@@ -100,7 +100,7 @@ function jump_to_url_location(engine, word) {
         let target = "_blank";
         return new Promise(resolve => { // param
             if (!view.is_wails()){ // web
-                // target = view.is_mobile_screen()===1?"_self":"_blank";
+                target = view.is_mobile_screen()===1?"_self":"_blank";
                 resolve(window.location.host);
             }else{ // wails
                 js_call_go.WebServerHost().then(_host=>{resolve(_host);});
