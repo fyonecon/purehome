@@ -47,7 +47,7 @@ function check_input_kw(_word){
     }
     //
     else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google"){
-        url = "https://fyonecon.github.io/purehome/app/?route=search&engine=&word="+word;
+        url = "./?route=search&engine=&word="+word;
         view.window_open(url, "_blank");
     }
     else if (word === "kw@bing#127" || word === "kw@baidu#127" || word === "kw@yandex#127" || word === "kw@google#127"){
