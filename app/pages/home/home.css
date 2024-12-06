@@ -242,9 +242,9 @@
 }
 
 @media screen and (max-width: 480px) {
-    /*.input-div{*/
-    /*    margin-top: calc(50px + 20px);*/
-    /*}*/
+    .input-div {
+        margin-top: calc(3% + 60px);
+    }
     .content {
         zoom: 0.90;
     }
