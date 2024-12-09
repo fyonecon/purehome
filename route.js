@@ -84,6 +84,21 @@ const pages = [
         ],
     }, //
     { // 页面模块
+        "route"     : "info",
+        "file_path" : "pages/info/info.view",
+        "title"     :  "App与浏览器参数",
+        "file"      : [
+            {
+                "js": [
+                    "pages/info/info.js",
+                ],
+                "css": [
+                    "pages/info/info.css",
+                ],
+            },
+        ],
+    }, //
+    { // 页面模块
         "route"     : "home",
         "file_path" : "pages/home/home.view",
         "title"     : "主页",

@@ -45,6 +45,10 @@ function check_input_kw(_word){
         url = "./?route=help";
         view.window_open(url, "_self");
     }
+    else if (word === "kw@info"){
+        url = "./?route=info";
+        view.window_open(url, "_self");
+    }
     //
     else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google"){
         url = "./?route=search&engine=&word="+word;

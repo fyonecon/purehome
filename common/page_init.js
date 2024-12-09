@@ -26,7 +26,7 @@ function page_init(e, route){
             || route === "search" || route === "help"
             || route === "share_dir" || route === "share_file" || route === "preview_file"
             || (route === "setting" && right_parts_name === "language-item")
-            || route === "coding"
+            || route === "coding" || route === "direct" || route === "info"
         ){ // 不需要登录
             start_page(e);
         } else { // 需要登录。不是login的话就直接检查是否已经登录
