@@ -2317,6 +2317,15 @@ const view = {
             }
         }
     },
+    is_mobile_pwa: function (){ // iOS/Android端pwa
+        return window.navigator?.standalone || document.referrer.includes('android-app://');
+    },
+    is_pc_pwa: function (){ // win/mac端pwa
+        const displayModes = ['fullscreen', 'standalone', 'minimal-ui'];
+        return displayModes.some(
+            displayMode => window.matchMedia('(display-mode: ' + displayMode + ')').matches
+        );
+    },
 
 };
 

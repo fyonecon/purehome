@@ -93,6 +93,12 @@ function show_info(){
             "value_class": "font-text",
         },
         {
+            "title": "IsMobileScreen",
+            "title_class": "font-text",
+            "value": view.is_mobile_screen(),
+            "value_class": "font-text",
+        },
+        {
             "title": "平台参数userAgent",
             "title_class": "font-text",
             "value": window.navigator.userAgent,
@@ -108,6 +114,18 @@ function show_info(){
             "title": "平台参数特性",
             "title_class": "font-text",
             "value": [!!window.localStorage, !!window.indexedDB, navigator.webdriver],
+            "value_class": "font-text",
+        },
+        {
+            "title": "CDN加速",
+            "title_class": "font-text",
+            "value": [cdn_page_file, cdn_depend_file],
+            "value_class": "font-text",
+        },
+        {
+            "title": "是否处于PWA(Mobile/PC)",
+            "title_class": "font-text",
+            "value": [view.is_mobile_pwa(), view.is_pc_pwa()],
             "value_class": "font-text",
         },
         //
