@@ -7,7 +7,7 @@
   "description": "",
   "icons": [
     {
-      "src": "./static/img/launcher.png",
+      "src": "./launcher.png",
       "type": "image/png",
       "sizes": "192x192"
     }
