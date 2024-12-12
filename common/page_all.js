@@ -100,8 +100,14 @@ function jump_to_url_location(engine, word) {
         let target = "_blank";
         return new Promise(resolve => { // param
             if (!view.is_wails()){ // web
-                if(view.get_url_param("", "utm_source") !== "pwa"){ // !pwa
-                    target = view.is_mobile_screen()===1?"_self":"_blank";
+                if (view.is_mobile_pwa() || view.is_pc_pwa()){ // PWA
+                    target = "_blank";
+                }else{ // 网页
+                    if (view.is_mobile_screen() === 0){ // PC
+                        target = "_blank";
+                    }else{ // mobile
+                        target = "_self";
+                    }
                 }
                 resolve(window.location.host);
             }else{ // wails
