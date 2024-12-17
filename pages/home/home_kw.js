@@ -50,7 +50,7 @@ function check_input_kw(_word){
         view.window_open(url, "_self");
     }
     //
-    else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google"){
+    else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google" || word === "kw@sogou" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
         url = "./?route=search&engine=&word="+word;
         view.window_open(url, "_blank");
     }

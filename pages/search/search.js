@@ -11,7 +11,7 @@ function s_update_history(input_value){
                 view.log("已存在历史记录：" + input_value);
             }else {
                 // 限制历史记录长度
-                let len = 30;
+                let len = 200;
                 let array_history = data_string.split(array_key)
                 let new_data_string = "";
                 for (let i=0; i<array_history.length; i++){
@@ -32,7 +32,7 @@ function s_update_history(input_value){
 
     try {
         // 自动处理历史记录，规则：start_history - new_history > 60 day，即表示无法在”长时间连续使用“的情况下，以前的历史即为fake历。
-        let len_day = 2*30; // 默认存2个月
+        let len_day = 6*30; // 默认存6个月
         let input_history_start_time_key = app_class + "input_history_start_time";
         let input_history_new_time_key = app_class + "input_history_new_time";
         let input_history_start_time = view.get_data(input_history_start_time_key)*1;
@@ -73,45 +73,107 @@ function jump_url_location(engine, word, url) {
     // 2-匹配展示本网站文字
     if (word === "kw@bing"){
         view.hide_loading();
+        view.title("请查看 kw 对应的内容");
 
-        let show_txt = search_url + "?route=search&engine=bing&history=no&word=%s";
+        let show_txt = search_url + "?route=search&engine=bing&history=yes&word=%s";
 
         $(".match-kw-span-msg").html("自定义 必应 搜索引擎");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
 
-        view.title("请查看 kw 对应的内容");
         return;
     }
     else if (word === "kw@baidu"){
         view.hide_loading();
+        view.title("请查看 kw 对应的内容");
 
         let show_txt = search_url + "?route=search&engine=baidu&history=no&word=%s";
         $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
 
+        return;
+    }
+    else if (word === "kw@sogou" || word === "kw@sougou"){
+        view.hide_loading();
         view.title("请查看 kw 对应的内容");
+
+        let show_txt = search_url + "?route=search&engine=sogou&history=no&word=%s";
+        $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
+        $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
+
         return;
     }
     else if (word === "kw@yandex"){
         view.hide_loading();
+        view.title("请查看 kw 对应的内容");
 
-        let show_txt = search_url + "?route=search&engine=yandex&history=no&word=%s";
+        let show_txt = search_url + "?route=search&engine=yandex&history=yes&word=%s";
         $(".match-kw-span-msg").html("自定义 Yandex 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
 
-        view.title("请查看 kw 对应的内容");
         return;
     }
     else if (word === "kw@google"){
         view.hide_loading();
+        view.title("请查看 kw 对应的内容");
 
-        let show_txt = search_url + "?route=search&engine=google&history=no&word=%s";
+        let show_txt = search_url + "?route=search&engine=google&history=yes&word=%s";
         $(".match-kw-span-msg").html("自定义 Google 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
 
-        view.title("请查看 kw 对应的内容");
         return;
     }
+
+    //
+    else if (word === "kw@" || word === "kws" || word === "@首页" || word === "@ph" || word === "@purehome"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./");
+        return;
+    }
+    else if (word === "kw@home" || word === "@home"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./?route=home");
+        return;
+    }
+    else if (word === "kw@info" || word === "@info"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./?route=info");
+        return;
+    }
+    else if (word === "kw@coding" || word === "@coding"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./?route=info");
+        return;
+    }
+    else if (word === "kw@404" || word === "@404"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./?route=404");
+        return;
+    }
+
+    //
+    else if (word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
+        view.hide_loading();
+        view.title("请欣赏。。");
+
+        view.write_js([cdn_page_file + "pages/search/kws.js?cache"+view.time_date("WmdHi")], function (state){
+            //
+            $(".match-kw-span-msg").html("请欣赏：");
+            $(".match-kw-span-txt").html(view.text_decode(kws_dom));
+        });
+
+        return;
+    }
+
 
     // 3-匹配搜索引擎
     else {
@@ -165,12 +227,12 @@ function jump_url_location(engine, word, url) {
             url = url + _word ;
             name = "头条搜索";
         }
-        else if (engine === "m_sogou"){
+        else if (engine === "m_sogou" || engine === "m_sougou"){
             url = "https://wap.sogou.com/web/searchList.jsp?from=index&keyword=";
             url = url + _word ;
             name = "搜狗搜索";
         }
-        else if (engine === "sogou"){
+        else if (engine === "sogou" || engine === "sougou"){
             url = "https://sogou.com/web?query=";
             url = url + _word ;
             name = "搜狗搜索";

@@ -262,8 +262,8 @@ function show_history(){
         $("#input-history").html("");
 
         let data_string = view.get_data(data_key)
-        // 限制历史记录长度
-        let len = 36;
+        // 限制显示历史记录长度
+        let len = 42;
         let array_history = data_string.split(array_key)
         for (let i=0; i<len; i++){
             let the_history = array_history[i];
@@ -293,7 +293,7 @@ function update_history(input_value){
                 view.log("已存在历史记录：" + input_value);
             }else {
                 // 限制历史记录长度
-                let len = 30;
+                let len = 200;
                 let array_history = data_string.split(array_key)
                 let new_data_string = "";
                 for (let i=0; i<array_history.length; i++){
@@ -315,7 +315,7 @@ function update_history(input_value){
 
     try {
         // 自动处理历史记录，规则：start_history - new_history > 30 day，即表示无法在”长时间连续使用“的情况下，以前的历史即为fake历。
-        let len_day = 30*3; // 默认存3月
+        let len_day = 30*6; // 默认存6月
         let input_history_start_time_key = app_class + "input_history_start_time";
         let input_history_new_time_key = app_class + "input_history_new_time";
         let input_history_start_time = view.get_data(input_history_start_time_key)*1;
