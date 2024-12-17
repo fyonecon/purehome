@@ -66,7 +66,7 @@ function s_clear_history(){
 
 // 最终跳转
 function jump_url_location(engine, word, url) {
-    let _word = '';
+    try {word = decodeURIComponent(word);}catch (e) {}
 
     const search_url= "http://"+window.location.host+assets_html_dir_name+assets_html_index_name;
 
@@ -79,8 +79,6 @@ function jump_url_location(engine, word, url) {
 
         $(".match-kw-span-msg").html("自定义 必应 搜索引擎");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
-
-        return;
     }
     else if (word === "kw@baidu"){
         view.hide_loading();
@@ -89,8 +87,6 @@ function jump_url_location(engine, word, url) {
         let show_txt = search_url + "?route=search&engine=baidu&history=no&word=%s";
         $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
-
-        return;
     }
     else if (word === "kw@sogou" || word === "kw@sougou"){
         view.hide_loading();
@@ -99,8 +95,6 @@ function jump_url_location(engine, word, url) {
         let show_txt = search_url + "?route=search&engine=sogou&history=no&word=%s";
         $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
-
-        return;
     }
     else if (word === "kw@yandex"){
         view.hide_loading();
@@ -109,8 +103,6 @@ function jump_url_location(engine, word, url) {
         let show_txt = search_url + "?route=search&engine=yandex&history=yes&word=%s";
         $(".match-kw-span-msg").html("自定义 Yandex 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
-
-        return;
     }
     else if (word === "kw@google"){
         view.hide_loading();
@@ -119,8 +111,6 @@ function jump_url_location(engine, word, url) {
         let show_txt = search_url + "?route=search&engine=google&history=yes&word=%s";
         $(".match-kw-span-msg").html("自定义 Google 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
-
-        return;
     }
 
     //
@@ -129,87 +119,72 @@ function jump_url_location(engine, word, url) {
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./");
-        return;
     }
     else if (word === "kw@home" || word === "@home"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./?route=home");
-        return;
     }
     else if (word === "kw@info" || word === "@info"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./?route=info");
-        return;
     }
     else if (word === "kw@coding" || word === "@coding"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./?route=info");
-        return;
     }
     else if (word === "kw@404" || word === "@404"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./?route=404");
-        return;
     }
 
     //
-    else if (word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
+    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
         view.hide_loading();
-        view.title("请欣赏。。");
-
+        view.title(" 🔞 ");
+        $(".match-kw-span-msg").html("加载中...");
         view.write_js([cdn_page_file + "pages/search/kws.js?cache"+view.time_date("WmdHi")], function (state){
             //
-            $(".match-kw-span-msg").html("请欣赏：");
-            $(".match-kw-span-txt").html(view.text_decode(kws_dom));
+            $(".match-kw-span-msg").html("🔞：");
+            $(".match-kw-span-txt").html(kws_dom);
         });
-
-        return;
     }
-
 
     // 3-匹配搜索引擎
     else {
         view.show_loading(0);
-
         let name = "";
-        try {
-            _word = decodeURIComponent(word);
-        }catch (e) {
-            _word = word;
-        }
-
         //
         if (engine === "baidu"){
             url = "https://www.baidu.com/s?ie=utf-8";
-            url = url + "&wd=" + _word;
+            url = url + "&wd=" + word;
             name = "Baidu";
         }
         else if (engine === "bing"){
             url = "https://www.bing.com/?ensearch=1";
-            url = url + "&q=" + _word;
+            url = url + "&q=" + word;
             name = "Bing";
         }
         else if (engine === "google"){
             url = "https://www.google.com/search?q=";
-            url = url + _word ;
+            url = url + word ;
             name = "Google";
         }
         else if (engine === "duckduckgo"){
             url = "https://duckduckgo.com/?ia=web";
-            url = url + "&q=" + _word ;
+            url = url + "&q=" + word ;
             name = "DuckDuckGo";
         }
         else if (engine === "yandex"){
             url = "https://yandex.com/search/?text=";
-            url = url+ _word ;
+            url = url+ word ;
             name = "Yandex";
         }
         else if (engine === "yahoo"){
@@ -219,52 +194,52 @@ function jump_url_location(engine, word, url) {
         }
         else if (engine === "m_toutiao"){
             url = "https://m.toutiao.com/search/?keyword=";
-            url = url + _word ;
+            url = url + word ;
             name = "头条搜索";
         }
         else if (engine === "toutiao"){
             url = "https://www.toutiao.com/search/?keyword=";
-            url = url + _word ;
+            url = url + word ;
             name = "头条搜索";
         }
         else if (engine === "m_sogou" || engine === "m_sougou"){
             url = "https://wap.sogou.com/web/searchList.jsp?from=index&keyword=";
-            url = url + _word ;
+            url = url + word ;
             name = "搜狗搜索";
         }
         else if (engine === "sogou" || engine === "sougou"){
             url = "https://sogou.com/web?query=";
-            url = url + _word ;
+            url = url + word ;
             name = "搜狗搜索";
         }
         else if (engine === "weixin"){
             url = "https://weixin.sogou.com/weixin?type=2&s_from=input&ie=utf8&query=";
-            url = url + _word ;
+            url = url + word ;
             name = "微信文章搜索";
         }
         else if (engine === "music"){
             url = "https://www.hifini.com/search-";
-            url = url + _word + "-1-1-1.htm";
+            url = url + word + "-1-1-1.htm";
             name = "Music搜索";
         }
         else if (engine === "video"){
             url = "https://www.bing.com/search?ensearch=1&q=tokyvideo+";
-            url = url + _word ;
+            url = url + word ;
             name = "Bing+Toky搜索";
         }
         else if (engine === "ipdomain"){
             url = "https://ipchaxun.com/";
-            url = url + _word;
+            url = url + word;
             name = "IP&网址";
         }
         else if (engine === "whois"){
             url = "https://www.whois.com/whois/";
-            url = url + _word;
+            url = url + word;
             name = "域名Whois";
         }
         else if (engine === "dpxz_download"){
             url = "http://s.uzzf.com/sousuo/pc/?k=";
-            url = url + _word;
+            url = url + word;
             name = "东坡下载";
         }
         else if (engine === "github"){
@@ -299,12 +274,12 @@ function jump_url_location(engine, word, url) {
         }
         else if (engine === "zh_en"){
             url = "https://fanyi.baidu.com/translate#zh/en/";
-            url = url + _word ;
+            url = url + word ;
             name = "中英翻译";
         }
         else if (engine === "en_zh"){
             url = "https://fanyi.baidu.com/translate#en/zh/";
-            url = url + _word ;
+            url = url + word ;
             name = "英中翻译";
         }
 
@@ -314,12 +289,9 @@ function jump_url_location(engine, word, url) {
             view.log("/?route=search&engine=&word=");
             return;
         }
-
         view.title("Opening keywords" + " with " + name);
-
+        window.location.replace(url);
     }
-
-    window.location.replace(url);
 }
 
 // 校验搜索引擎
