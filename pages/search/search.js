@@ -67,11 +67,17 @@ function s_clear_history(){
 // 最终跳转
 function jump_url_location(engine, word, url) {
     try {word = decodeURIComponent(word);}catch (e) {}
-
     const search_url= "http://"+window.location.host+assets_html_dir_name+assets_html_index_name;
 
+    // 是链接就直接打开, http/https开头
+    if (view.is_url(word)){
+        view.hide_loading();
+        view.title("直接打开网址");
+        window.location.replace(word);
+    }
+
     // 2-匹配展示本网站文字
-    if (word === "kw@bing"){
+    else if (word === "kw@bing"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -148,12 +154,16 @@ function jump_url_location(engine, word, url) {
     //
     else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
         view.hide_loading();
-        view.title(" 🔞 ");
-        $(".match-kw-span-msg").html("加载中...");
-        view.write_js([cdn_page_file + "pages/search/kws.js?cache"+view.time_date("WmdHi")], function (state){
-            //
-            $(".match-kw-span-msg").html("🔞：");
-            $(".match-kw-span-txt").html(kws_dom);
+        view.title(" 😂 ");
+        $(".match-kw-span-msg").html("正在加载...");
+        view.write_js([cdn_page_file + "pages/search/kws.js?cache="+view.time_date("YmdHi")], function (state){
+            if (state){
+                $(".match-kw-span-msg").html(kws_title);
+                $(".match-kw-span-txt").html(kws_dom);
+            }else{
+                $(".match-kw-span-msg").html("Error：");
+                $(".match-kw-span-txt").html("kw.js文件未正确加载，详情请看log。");
+            }
         });
     }
 
