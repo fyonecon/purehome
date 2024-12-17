@@ -155,16 +155,22 @@ function jump_url_location(engine, word, url) {
     else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
         view.hide_loading();
         view.title(" 😂KWS ");
-        $(".match-kw-span-msg").html("正在加载...");
-        view.write_js([cdn_page_file + "pages/search/kws.js?cache="+view.time_date("YmdHi")], function (state){
-            if (state){
-                $(".match-kw-span-msg").html(kws_title);
-                $(".match-kw-span-txt").html(kws_dom);
-            }else{
-                $(".match-kw-span-msg").html("Error：");
-                $(".match-kw-span-txt").html("kw.js文件未正确加载，详情请看log。");
-            }
-        });
+        if (view.is_mobile_screen()){
+            $(".match-kw-span-msg").html("正在加载...");
+            view.write_js([cdn_page_file + "pages/search/kws.js?cache="+view.time_date("YmdHi")], function (state){
+                if (state){
+                    $(".match-kw-span-msg").html(kws_title);
+                    $(".match-kw-span-txt").html(kws_dom);
+                }else{
+                    $(".match-kw-span-msg").html("Error：");
+                    $(".match-kw-span-txt").html("kw.js文件未正确加载，详情请看log。");
+                }
+            });
+        }else{
+            $(".match-kw-span-msg").html("提示🔔：");
+            $(".match-kw-span-txt").html("不支持此口令。");
+            window.location.replace(app_url.jump_url+"&error=不支持此口令");
+        }
     }
 
     // 3-匹配搜索引擎

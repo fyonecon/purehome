@@ -50,12 +50,22 @@ function check_input_kw(_word){
         view.window_open(url, "_self");
     }
     //
-    else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google" || word === "kw@sogou"
-        || word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp"
-        || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"
-    ){
+    else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google" || word === "kw@sogou"){
         url = "./?route=search&engine=&word="+word;
         view.window_open(url, "_blank");
+    }
+    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
+        url = "./?route=search&word="+word;
+        if (view.is_wails()){
+            view.window_open(url, "_blank");
+        }else{
+            if (view.is_mobile_screen()){
+                window.location.replace(url);
+            }else{
+                url = "./?route=search&engine=bing&word=@"+word;
+                view.window_open(url, "_blank");
+            }
+        }
     }
     else if (word === "kw@bing#127" || word === "kw@baidu#127" || word === "kw@yandex#127" || word === "kw@google#127"){
         url = "http://127.0.0.1:"+api_port+assets_html_dir_name+assets_html_index_name+"?route=search&engine=&word="+word;

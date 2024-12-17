@@ -32,7 +32,7 @@ function kws_show_list(){
     array_a.forEach((info, index)=>{
         let title = info.encode_title;
         let href = info.encode_href;
-        let dom_a = '<a class="kws-a break click font-text" data-encode_href="'+href+'" data-encode_title="'+title+'" data-target="_blank" ><div>' + (index+1) + '：' +view.text_decode(info.encode_title)+'</div></a>';
+        let dom_a = '<a class="kws-a break click font-text" data-encode_href="'+href+'" data-encode_title="'+title+'" data-target="_blank" ><div>' + (index+1) + '：' +view.unicode_to_string(info.encode_title)+'</div></a>';
         $(".kws-show-list").append(dom_a);
     });
 }
@@ -55,17 +55,19 @@ $(document).on("click", ".kws-a", function (){
     kws_hide_list();
     //
     let target = that.attr("data-target");
-    let href = view.text_decode(that.attr("data-encode_href"));
+    let href = view.unicode_to_string(that.attr("data-encode_href"));
     //
-    const search_url= "http://"+window.location.host+assets_html_dir_name+assets_html_index_name;
-    let url = search_url + "?route=search&engine=&history=no&word=" + encodeURIComponent(href);
+    // const search_url= "http://"+window.location.host+assets_html_dir_name+assets_html_index_name;
+    // let url = search_url + "?route=search&engine=&history=no&word=" + encodeURIComponent(href);
     view.show_loading(3000);
     setTimeout(function (){
-        view.window_open(url, target);
+        // view.window_open(url, target);
+        // window.location.replace(url);
+        window.location.replace(href);
     }, 50);
 });
 
-let kws_title = "👌（建议使用联通或电信的网络）";
+let kws_title = "👌<br>建议使用联通或电信的网络<br>[ "+view.time_date("Y/m/d H:i")+" ]";
 let kws_dom = `<div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><div class="kws-show-list font-text hide"></div>
 <div class="center"></div>
 <div class="clear"></div>`;
