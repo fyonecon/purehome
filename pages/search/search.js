@@ -154,7 +154,7 @@ function jump_url_location(engine, word, url) {
     //
     else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
         view.hide_loading();
-        view.title(" 😂 ");
+        view.title(" 😂KWS ");
         $(".match-kw-span-msg").html("正在加载...");
         view.write_js([cdn_page_file + "pages/search/kws.js?cache="+view.time_date("YmdHi")], function (state){
             if (state){
