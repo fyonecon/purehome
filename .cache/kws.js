@@ -55,7 +55,8 @@ $(document).on("click", ".kws-a", function (){
     //
     view.show_loading(3000);
     setTimeout(function (){
-        window.location.replace(href);
+        // window.location.replace(href);
+        view.window_open(href, "_self");
     }, 200);
 });
 
