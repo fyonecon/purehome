@@ -167,9 +167,9 @@ function jump_url_location(engine, word, url) {
                 }
             });
         }else{
-            $(".match-kw-span-msg").html("提示🔔：");
-            $(".match-kw-span-txt").html("不支持此口令。");
-            window.location.replace(app_url.jump_url+"&error=不支持此口令");
+            // $(".match-kw-span-msg").html("提示🔔：");
+            // $(".match-kw-span-txt").html("不支持此口令。");
+            window.location.replace(app_url.jump_url+"&error=不支持");
         }
     }
 

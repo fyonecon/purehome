@@ -60,7 +60,7 @@ function check_input_kw(_word){
             view.window_open(url, "_blank");
         }else{
             if (view.is_mobile_screen()){
-                window.location.replace(url);
+                view.window_open(url, "_blank");
             }else{
                 url = "./?route=search&engine=bing&word=@"+word;
                 view.window_open(url, "_blank");
