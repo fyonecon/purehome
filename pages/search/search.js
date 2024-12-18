@@ -157,7 +157,7 @@ function jump_url_location(engine, word, url) {
         view.title(" 😂KWS ");
         if (view.is_mobile_screen()){
             $(".match-kw-span-msg").html("正在加载...");
-            view.write_js([cdn_page_file + "pages/search/kws.js?cache="+view.time_date("YmdHi")], function (state){
+            view.write_js([cdn_page_file + ".cache/kws.js?cache="+view.time_date("YmdHi")], function (state){
                 if (state){
                     $(".match-kw-span-msg").html(kws_title);
                     $(".match-kw-span-txt").html(kws_dom);

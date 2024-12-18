@@ -65,61 +65,40 @@ const search_data_default = [
 
 ];
 
-let kwword = "";
 // 搜索条件
 function jump_to_url_location(engine, word) {
+    view.show_loading(0);
 
-    // 1-匹配到外部链接
-    if (view.string_include_string(word, "kws")!==-1){
-        view.show_loading(0);
-        kwword = word;
-        view.notice_txt("正在打开kws对应的内容", 2000);
-        view.write_js(
-            [cdn_page_file+".cache/js/kws.js?cache="+view.time_date("YmdHWi")], function (bool){
-                try{
-                    kws.load(kwword);
-                }catch (w){
-                    view.notice_txt("外部js资源加载错误！", 10000);
-                    view.title("外部js源加载错误！");
-                }
-                kwword="";
-            });
-    }
-    // 2-匹配搜索引擎
-    else {
-        view.show_loading(0);
+    // 屏蔽词
+    let del_fake_news = view.get_data(app_class+"search_del_fake_news");
+    del_fake_news = decodeURIComponent(del_fake_news)?" "+decodeURIComponent(del_fake_news):"";
 
-        // 屏蔽词
-        let del_fake_news = view.get_data(app_class+"search_del_fake_news");
-        del_fake_news = decodeURIComponent(del_fake_news)?" "+decodeURIComponent(del_fake_news):"";
-
-        // 重定向到search页进行
-        let search_host= "";
-        let param_data = "";
-        let history = "no";
-        let target = "_blank";
-        return new Promise(resolve => { // param
-            if (!view.is_wails()){ // web
-                if (view.is_mobile_pwa() || view.is_pc_pwa()){ // PWA
+    // 重定向到search页进行
+    let search_host= "";
+    let param_data = "";
+    let history = "no";
+    let target = "_blank";
+    return new Promise(resolve => { // param
+        if (!view.is_wails()){ // web
+            if (view.is_mobile_pwa() || view.is_pc_pwa()){ // PWA
+                target = "_blank";
+            }else{ // 网页
+                if (view.is_mobile_screen() === 0){ // PC
                     target = "_blank";
-                }else{ // 网页
-                    if (view.is_mobile_screen() === 0){ // PC
-                        target = "_blank";
-                    }else{ // mobile
-                        target = "_self";
-                    }
+                }else{ // mobile
+                    target = "_self";
                 }
-                resolve(window.location.host);
-            }else{ // wails
-                js_call_go.WebServerHost().then(_host=>{resolve(_host);});
             }
-        }).then(host=>{ // open
-            search_host= "http://"+host+assets_html_dir_name+assets_html_index_name;
-            param_data = "?route=search&engine="+engine+"&history="+history+"&word="+word+del_fake_news;
-            //
-            view.window_open(search_host+param_data, target);
-        });
-    }
+            resolve(window.location.host);
+        }else{ // wails
+            js_call_go.WebServerHost().then(_host=>{resolve(_host);});
+        }
+    }).then(host=>{ // open
+        search_host= "http://"+host+assets_html_dir_name+assets_html_index_name;
+        param_data = "?route=search&engine="+engine+"&history="+history+"&word="+word+del_fake_news;
+        //
+        view.window_open(search_host+param_data, target);
+    });
 }
 // 开始搜索
 function jump_to_search_engine(engine, word) {

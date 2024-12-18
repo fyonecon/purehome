@@ -1,29 +1,25 @@
 
 function kws_show_list(){
-    let array_a = [
+    let array_a = [ // unicode
         // {
-        //     encode_title: "", // unicode
-        //     encode_href: "" // unicode
-        // },
-        // {
-        //     encode_title: "21507,29916,32593", // unicode
-        //     encode_href: "104,116,116,112,115,58,47,47,98,111,111,107,46,106,117,102,105,110,102,115,122,107,46,99,111,109,47" // unicode
+        //     encode_title: "",
+        //     encode_href: ""
         // },
         {
-            encode_title: "57,49,21507,29916", // unicode
-            encode_href: "104,116,116,112,115,58,47,47,107,98,117,121,112,46,106,114,103,116,105,108,46,99,111,109,47" // unicode
+            encode_title: "57,49,21507,29916",
+            encode_href: "104,116,116,112,115,58,47,47,107,98,117,121,112,46,106,114,103,116,105,108,46,99,111,109,47"
         },
         {
-            encode_title: "53,49,21507,29916", // unicode
-            encode_href: "104,116,116,112,115,58,47,47,119,105,107,105,112,101,100,105,97,52,46,121,114,104,112,97,118,108,46,99,111,109,47" // unicode
+            encode_title: "53,49,21507,29916",
+            encode_href: "104,116,116,112,115,58,47,47,119,105,107,105,112,101,100,105,97,52,46,121,114,104,112,97,118,108,46,99,111,109,47"
         },
         {
-            encode_title: "56,88,56,88", // unicode
-            encode_href: "104,116,116,112,115,58,47,47,117,51,106,46,113,98,110,111,48,103,46,109,111,109,47,105,110,100,101,120,46,104,116,109,108,63,119,120,61,49" // unicode
+            encode_title: "56,88,56,88",
+            encode_href: "104,116,116,112,115,58,47,47,117,51,106,46,113,98,110,111,48,103,46,109,111,109,47,105,110,100,101,120,46,104,116,109,108,63,119,120,61,49"
         },
         {
-            encode_title: "57,49,80,111,114,110", // unicode
-            encode_href: "104,116,116,112,115,58,47,47,118,105,112,46,57,49,112,48,55,46,99,111,109,47,105,110,100,101,120,46,112,104,112" // unicode
+            encode_title: "57,49,80,111,114,110",
+            encode_href: "104,116,116,112,115,58,47,47,118,105,112,46,57,49,112,48,55,46,99,111,109,47,105,110,100,101,120,46,112,104,112"
         },
     ];
     //
@@ -57,14 +53,10 @@ $(document).on("click", ".kws-a", function (){
     let target = that.attr("data-target");
     let href = view.unicode_to_string(that.attr("data-encode_href"));
     //
-    // const search_url= "http://"+window.location.host+assets_html_dir_name+assets_html_index_name;
-    // let url = search_url + "?route=search&engine=&history=no&word=" + encodeURIComponent(href);
     view.show_loading(3000);
     setTimeout(function (){
-        // view.window_open(url, target);
-        // window.location.replace(url);
         window.location.replace(href);
-    }, 50);
+    }, 200);
 });
 
 let kws_title = "👌<br>建议使用联通或电信的网络<br>[ "+view.time_date("Y/m/d H:i")+" ]";

@@ -4,7 +4,7 @@ function check_input_kw(_word){
     view.log("对比字符串：", [_word, word]);
     let state = true;
     let url = "";
-    if (word === "kw@首页" || word === "kw@home" || word === "kw@" || word === "kw@fresh" || word === "kw@refresh"){
+    if (word === "kw@首页" || word === "kw@home" || word === "kw@" || word === "kw@fresh" || word === "kw@refresh" || word === "@home" || word === "@首页"){
         url = "./";
         view.window_open(url, "_self");
     }
@@ -49,29 +49,6 @@ function check_input_kw(_word){
         url = "./?route=info";
         view.window_open(url, "_self");
     }
-    //
-    else if (word === "kw@bing" || word === "kw@baidu" || word === "kw@yandex" || word === "kw@google" || word === "kw@sogou"){
-        url = "./?route=search&engine=&word="+word;
-        view.window_open(url, "_blank");
-    }
-    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
-        url = "./?route=search&word="+word;
-        if (view.is_wails()){
-            view.window_open(url, "_blank");
-        }else{
-            if (view.is_mobile_screen()){
-                view.window_open(url, "_blank");
-            }else{
-                url = "./?route=search&engine=bing&word=@"+word;
-                view.window_open(url, "_blank");
-            }
-        }
-    }
-    else if (word === "kw@bing#127" || word === "kw@baidu#127" || word === "kw@yandex#127" || word === "kw@google#127"){
-        url = "http://127.0.0.1:"+api_port+assets_html_dir_name+assets_html_index_name+"?route=search&engine=&word="+word;
-        view.window_open(url, "_blank");
-    }
-    //
     else if (word === "kw@translator" || word === "kw@biyingfanyi" || word === "kw@必应翻译"){
         url = "https://www.bing.com/translator";
         view.window_open(url, "_blank");
