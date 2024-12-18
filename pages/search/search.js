@@ -381,7 +381,3 @@ function start_page(e) {
     view.log(e);
     jump_search_engine();
 }
-
-function show_page(){
-    window.location.reload();
-}
