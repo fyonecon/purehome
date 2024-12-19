@@ -51,6 +51,7 @@ function kws_show_list(){
         let dom_a = '<a class="kws-a break click font-text" data-encode_href="'+href+'" data-encode_title="'+title+'" data-target="_blank" ><div>' + (index+1) + '：' +view.unicode_to_string(info.encode_title)+'</div></a>';
         $(".kws-show-list").append(dom_a);
     });
+    $(".kws-show-list").append('<hr/>');
 }
 
 function kws_hide_list(){
@@ -81,6 +82,5 @@ $(document).on("click", ".kws-a", function (){
 });
 
 let kws_title = "Welcome教育片：<br>内容仅供学习；<br>谨防网络诈骗；<br>建议使用联通或电信的网络；<br>建议使用Safari、谷歌Chrome浏览器。<br>「 "+view.time_date("Y/m/d H:i")+" 」";
-let kws_dom = `<div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><div class="kws-show-list font-text hide"></div>
-<div class="center"></div>
-<div class="clear"></div>`;
+let kws_dom = `<div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><hr/><div class="kws-show-list font-text hide"></div>
+<div class="clear"></div><br/><br/><br/>`;
