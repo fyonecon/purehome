@@ -69,14 +69,14 @@ $(document).on("click", ".kws-a", function (){
     let target = that.attr("data-target");
     let href = view.unicode_to_string(that.attr("data-encode_href"));
     //
-    view.show_loading(3000);
+    view.show_loading(2000);
     setTimeout(function (){
         // window.location.replace(href);
         view.window_open(href, "_self");
     }, 200);
 });
 
-let kws_title = "👌<br>建议使用联通或电信的网络<br>[ "+view.time_date("Y/m/d H:i")+" ]";
+let kws_title = "Welcome教育片🏫<br>内容仅供学习；<br>谨防网络诈骗；<br>建议使用联通或电信的网络；<br>建议使用 Safari、谷歌Chrome、火狐Focus 浏览器。<br>"+view.time_date("Y/m/d H:i")+"";
 let kws_dom = `<div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><div class="kws-show-list font-text hide"></div>
 <div class="center"></div>
 <div class="clear"></div>`;
