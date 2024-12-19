@@ -76,7 +76,7 @@ $(document).on("click", ".kws-a", function (){
     }, 200);
 });
 
-let kws_title = "Welcome教育片🏫<br>内容仅供学习；<br>谨防网络诈骗；<br>建议使用联通或电信的网络；<br>建议使用 Safari、谷歌Chrome、火狐Focus 浏览器。<br>"+view.time_date("Y/m/d H:i")+"";
+let kws_title = "Welcome教育片：<br>内容仅供学习；<br>谨防网络诈骗；<br>建议使用联通或电信的网络；<br>建议使用Safari、谷歌Chrome浏览器。<br>「 "+view.time_date("Y/m/d H:i")+" 」";
 let kws_dom = `<div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><div class="kws-show-list font-text hide"></div>
 <div class="center"></div>
 <div class="clear"></div>`;
