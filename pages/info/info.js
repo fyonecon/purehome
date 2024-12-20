@@ -83,7 +83,7 @@ function show_info(){
         {
             "title": "Screen尺度参数",
             "title_class": "font-text",
-            "value": "width=" + window.screen.width + "<br/>height=" + window.screen.height+ "<br/>availWidth=" + window.screen.availWidth+ "<br/>availHeight=" + window.screen.availHeight,
+            "value": "screen.width=" + window.screen.width + "<br/>screen.height=" + window.screen.height+ "<br/>screen.availWidth=" + window.screen.availWidth+ "<br/>screen.availHeight=" + window.screen.availHeight,
             "value_class": "font-text",
         },
         {
@@ -96,6 +96,12 @@ function show_info(){
             "title": "IsMobileScreen",
             "title_class": "font-text",
             "value": view.is_mobile_screen(),
+            "value_class": "font-text",
+        },
+        {
+            "title": "IsUserScreen",
+            "title_class": "font-text",
+            "value": view.is_user_screen(),
             "value_class": "font-text",
         },
         {

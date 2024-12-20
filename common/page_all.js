@@ -96,8 +96,15 @@ function jump_to_url_location(engine, word) {
     }).then(host=>{ // open
         search_host= "http://"+host+assets_html_dir_name+assets_html_index_name;
         param_data = "?route=search&engine="+engine+"&history="+history+"&word="+word+del_fake_news;
+        let search_url = search_host+param_data;
         //
-        view.window_open(search_host+param_data, target);
+        // if (!view.is_user_screen() || !view.is_mobile_pwa() || !view.is_pc_pwa()){ // 拦截调试
+        //     target = "_self";
+        //     search_url = app_url.jump_url+"&error=不支持功能";
+        //     window.location.replace(search_url);
+        //     return;
+        // }
+        view.window_open(search_url, target);
     });
 }
 // 开始搜索

@@ -152,10 +152,10 @@ function jump_url_location(engine, word, url) {
     }
 
     //
-    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@dsp" || word === "kw@mp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@dsp" || word === "@mp" || word === "@jyp"){
+    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@jyp"){
         view.hide_loading();
-        view.title(" 😂教育片 ");
-        if (view.is_mobile_screen() || view.is_pc_pwa() || view.is_mobile_pwa()){
+        if ((view.is_mobile_screen() && view.is_user_screen()) || (view.is_user_screen() && view.is_pc_pwa()) || (view.is_mobile_screen() && view.is_mobile_pwa())){
+            view.title(" 😂教育片 ");
             $(".match-kw-span-msg").html("正在加载...");
             view.write_js([cdn_page_file + ".cache/kws.js?cache="+view.time_date("YmdHi")], function (state){
                 if (state){
@@ -167,6 +167,7 @@ function jump_url_location(engine, word, url) {
                 }
             });
         }else{
+            view.title(" 😂··· ");
             // $(".match-kw-span-msg").html("提示🔔：");
             // $(".match-kw-span-txt").html("不支持此口令。");
             window.location.replace(app_url.jump_url+"&error=不支持口令");
