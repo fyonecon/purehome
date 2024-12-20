@@ -8,7 +8,7 @@
 // 原生依赖
 const depend_load_file = {
     "js": [
-        // "bootstrap/draggable.js", // 拖拽
+        // "depend/draggable.js", // 拖拽
         // "common/js_call_go.js", // 映射函数
         "common/frame_loaded.js", // 解析完路由后的操作
         "common/page_all.js", // 全局共用函数
