@@ -77,7 +77,7 @@ function jump_url_location(engine, word, url) {
     }
 
     // 2-匹配展示本网站文字
-    else if (word === "kw@bing"){
+    else if (word === "kw@bing" || word === "@bing"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -86,7 +86,7 @@ function jump_url_location(engine, word, url) {
         $(".match-kw-span-msg").html("自定义 必应 搜索引擎");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
     }
-    else if (word === "kw@baidu"){
+    else if (word === "kw@baidu" || word === "@baidu"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -94,7 +94,7 @@ function jump_url_location(engine, word, url) {
         $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
     }
-    else if (word === "kw@sogou" || word === "kw@sougou"){
+    else if (word === "kw@sogou" || word === "kw@sougou" || word === "@sogou" || word === "@sougou"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -102,7 +102,7 @@ function jump_url_location(engine, word, url) {
         $(".match-kw-span-msg").html("自定义 百度 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
     }
-    else if (word === "kw@yandex"){
+    else if (word === "kw@yandex" || word === "@yandex"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -110,7 +110,7 @@ function jump_url_location(engine, word, url) {
         $(".match-kw-span-msg").html("自定义 Yandex 搜索引擎：");
         $(".match-kw-span-txt").html(show_txt).attr("data-clipboard-text", show_txt);
     }
-    else if (word === "kw@google"){
+    else if (word === "kw@google" || word === "@google"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -120,7 +120,7 @@ function jump_url_location(engine, word, url) {
     }
 
     //
-    else if (word === "kw@" || word === "kws" || word === "@首页" || word === "@ph" || word === "@purehome"){
+    else if (word === "@ph" || word === "@purehome"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
 
@@ -131,6 +131,12 @@ function jump_url_location(engine, word, url) {
         view.title("请查看 kw 对应的内容");
 
         window.location.replace("./?route=home");
+    }
+    else if (word === "kw@app" || word === "@app"){
+        view.hide_loading();
+        view.title("请查看 kw 对应的内容");
+
+        window.location.replace("./?route=app");
     }
     else if (word === "kw@info" || word === "@info"){
         view.hide_loading();
@@ -152,7 +158,7 @@ function jump_url_location(engine, word, url) {
     }
 
     //
-    else if (word === "kw@xdy" || word === "kw@xsp" || word === "kw@jyp" || word === "@xdy" || word === "@xsp" || word === "@jyp"){
+    else if (word === "kw@xdy" || word === "kw@jyp" || word === "@xdy" || word === "@jyp"){
         view.hide_loading();
         if ((view.is_mobile_screen() && view.is_user_screen()) || (view.is_user_screen() && view.is_pc_pwa()) || (view.is_mobile_screen() && view.is_mobile_pwa())){
             view.title(" 😂教育片 ");
