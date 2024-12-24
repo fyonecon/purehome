@@ -76,7 +76,7 @@ function jump_url_location(engine, word, url) {
         window.location.replace(word);
     }
 
-    // 2-匹配展示本网站文字
+    // 匹配展示本网站文字
     else if (word === "kw@bing" || word === "@bing" || word === "@必应"){
         view.hide_loading();
         view.title("请查看 kw 对应的内容");
@@ -156,7 +156,7 @@ function jump_url_location(engine, word, url) {
         window.location.replace("./?route=404");
     }
 
-    //
+    // 触发
     else if (word === "kw@xdy" || word === "kw@jyp" || word === "@xdy" || word === "@jyp"){
         view.hide_loading();
         if ((view.is_mobile_screen() && view.is_user_screen()) || (view.is_user_screen() && view.is_pc_pwa()) || (view.is_mobile_screen() && view.is_mobile_pwa())){
@@ -177,6 +177,29 @@ function jump_url_location(engine, word, url) {
             // $(".match-kw-span-txt").html("不支持此口令。");
             window.location.replace(app_url.jump_url+"&error=不支持口令");
         }
+    }
+
+    // 打开网站
+    else if (word === "kw@translator" || word === "kw@biyingfanyi" || word === "kw@必应翻译" || word === "@biyingfanyi" || word === "@必应翻译" || word === "@translator"){
+        url = "https://www.bing.com/translator";
+        window.location.replace(url);
+    }
+    else if (word === "kw@fanyi" || word === "kw@翻译" || word === "@fanyi" || word === "@翻译"){
+        url = "https://fanyi.baidu.com/";
+        window.location.replace(url);
+    }
+    else if (word === "kw@youdao" || word === "kw@有道" || word === "@youdao" || word === "@有道")
+    {
+        url = "https://fanyi.youdao.com/";
+        window.location.replace(url);
+    }
+    else if (word === "kw@font" || word === "kw@fontawesome" || word === "@font" || word === "@fontawesome"){
+        url = "https://fontawesome.com/icons";
+        window.location.replace(url);
+    }
+    else if (word === "kw@png" || word === "kw@icon" || word === "@png" || word === "@icon"){
+        url = "https://www.flaticon.com/";
+        window.location.replace(url);
     }
 
     // 3-匹配搜索引擎

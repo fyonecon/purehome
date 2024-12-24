@@ -2,8 +2,11 @@
 function check_input_kw(_word){
     let word = decodeURIComponent(_word);
     view.log("对比字符串：", [_word, word]);
+
     let state = true;
     let url = "";
+
+    // 默认
     if (word === "kw@" || word === "kw@fresh" || word === "kw@reload" || word === "kw@refresh" || word === "@fresh" || word === "@refresh" || word === "@reload"){
         url = "./";
         view.window_open(url, "_self");
@@ -16,7 +19,7 @@ function check_input_kw(_word){
         url = "./?route=404";
         view.window_open(url, "_self");
     }
-    //
+    // 其他
     else if (word === "kw@notes" || word === "kw@paste" || word === "@notes" || word === "@paste"){
         url = "./?route=notes&cache="+view.time_date("YmdHis");
         view.window_open(url, "_self");
@@ -49,31 +52,11 @@ function check_input_kw(_word){
         url = "./?route=info";
         view.window_open(url, "_self");
     }
-    else if (word === "kw@translator" || word === "kw@biyingfanyi" || word === "kw@必应翻译" || word === "@biyingfanyi" || word === "@必应翻译" || word === "@translator"){
-        url = "https://www.bing.com/translator";
-        view.window_open(url, "_blank");
-    }
-    else if (word === "kw@fanyi" || word === "kw@翻译" || word === "@fanyi" || word === "@翻译"){
-        url = "https://fanyi.baidu.com/";
-        view.window_open(url, "_blank");
-    }
-    else if (word === "kw@youdao" || word === "kw@有道" || word === "@youdao" || word === "@有道")
-    {
-        url = "https://fanyi.youdao.com/";
-        view.window_open(url, "_blank");
-    }
-    else if (word === "kw@font" || word === "kw@fontawesome" || word === "@font" || word === "@fontawesome"){
-        url = "https://fontawesome.com/icons";
-        view.window_open(url, "_blank");
-    }
-    else if (word === "kw@png" || word === "kw@icon" || word === "@png" || word === "@icon"){
-        url = "https://www.flaticon.com/";
-        view.window_open(url, "_blank");
-    }
     else if (word === white_local_key){
         clear_all_data();
     }
-    //
+
+    // 本页面打开一个网址
     else if (view.string_include_string(word, "kw@url=") >= 0 || word === view.string_include_string(word, "@url=") >= 0){
         view.notice_txt("打开网址", 2000);
         let dom_id = "content-bg";
