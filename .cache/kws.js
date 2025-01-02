@@ -85,6 +85,6 @@ $(document).on("click", ".kws-a", function (){
     }, 200);
 });
 
-let kws_title = "<div><span style='font-weight: 700;'>教育片@jyp：</span><br>内容仅供学习，谨防网络诈骗；<br>推荐使用联通或电信的网络；<br>推荐使用Safari、谷歌Chrome浏览器。</div><br>[ "+view.time_date("Y/m/d H:i")+" ]";
+let kws_title = "<div><span style='font-weight: 700;'>[ 教育片 @jyp ]</span><br>内容仅供学习，谨防网络诈骗；<br>推荐联通、电信的网络；<br>推荐 苹果Safari、谷歌Chrome 浏览器。</div><div><span style='font-weight: 700;'>[ "+view.time_date("Y/m/d H:i")+" ]</span></div>";
 let kws_dom = `<hr/><div class="kws-show-btn select-none click font-blue font-text">展示列表</div><div class="clear"></div><hr/><div class="kws-show-list font-text hide"></div>
 <div class="clear"></div><br/><br/><br/>`;
