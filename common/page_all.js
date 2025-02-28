@@ -86,7 +86,7 @@ function jump_to_url_location(engine, word) {
                 if (view.is_mobile_screen() === 0){ // PC
                     target = "_blank";
                 }else{ // mobile
-                    target = "_self";
+                    // target = "_self";
                 }
             }
             resolve(window.location.host);
