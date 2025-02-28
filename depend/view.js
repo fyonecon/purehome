@@ -2300,7 +2300,7 @@ const view = {
     is_mobile_screen: function (){ //-1非法，0PC，1mobile
         let width = window.screen.width;
         let height = window.screen.height;
-        let max_px = 1080;
+        let max_px = 1280; // 最大 1280X900 px
         let min_px = 280;
         let rate = 40;
         if (width < min_px || height < min_px){
