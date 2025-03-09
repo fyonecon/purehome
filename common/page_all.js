@@ -7,16 +7,20 @@ const search_data_default = [
         "engine": "bing", // 引擎名称
     },
     {
+        "name": "百度Baidu",
+        "engine": "baidu",
+    },
+    {
+        "name": "搜狗Sogou",
+        "engine": "sogou",
+    },
+    {
         "name": "Google", // 引擎描述，可视5个字
         "engine": "google", // 引擎名称
     },
     {
-        "name": "百度",
-        "engine": "baidu",
-    },
-    {
-        "name": "搜狗",
-        "engine": "sogou",
+        "name": "DuckDuckGo",
+        "engine": "duckduckgo",
     },
     {
         "name": "Yandex",
@@ -25,10 +29,6 @@ const search_data_default = [
     {
         "name": "Yahoo!",
         "engine": "yahoo",
-    },
-    {
-        "name": "DuckDuckGo",
-        "engine": "duckduckgo",
     },
     // {
     //     "name": "Github",
@@ -51,7 +51,7 @@ const search_data_default = [
     //     "engine": "douyin",
     // },
     {
-        "name": "Icon Img",
+        "name": "Icon Images",
         "engine": "icons",
     },
     {
