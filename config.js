@@ -19,7 +19,7 @@ const log_url         = "";  // log主地址
 let api_port = ""; // 端口
 const assets_file_dir_name = window.location.host==="fyonecon.github.io"?"/purehome/":"/"; // 中间路由文件路径，/
 const assets_html_dir_name = window.location.host==="fyonecon.github.io"?"/purehome/":"/"; // 中间路由文件路径，/
-const assets_html_index_name = ""; // 索引文件。默认：""或"index.html"
+const assets_html_index_name = "index.html"; // 索引文件。默认：""或"index.html"
 const white_local_key = "";
 
 // 白名单host或refer域名
