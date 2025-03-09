@@ -30,18 +30,18 @@ const search_data_default = [
         "name": "DuckDuckGo",
         "engine": "duckduckgo",
     },
-    {
-        "name": "Github",
-        "engine": "github",
-    },
-    {
-        "name": "X",
-        "engine": "x",
-    },
-    {
-        "name": "Youtube",
-        "engine": "youtube",
-    },
+    // {
+    //     "name": "Github",
+    //     "engine": "github",
+    // },
+    // {
+    //     "name": "X",
+    //     "engine": "x",
+    // },
+    // {
+    //     "name": "Youtube",
+    //     "engine": "youtube",
+    // },
     // {
     //     "name": "TikTok",
     //     "engine": "tiktok",
