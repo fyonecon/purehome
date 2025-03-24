@@ -3,7 +3,7 @@
   "short_name": "PureHome",
   "start_url": "./?route=home&from=app&utm_source=pwa",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#ffffff",
   "description": "",
   "icons": [
     {
