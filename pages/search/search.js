@@ -159,7 +159,7 @@ function jump_url_location(engine, word, url) {
     // 触发
     else if (word === "kw@xdy" || word === "kw@jyp" || word === "@xdy" || word === "@jyp"){
         view.hide_loading();
-        let white_data = view.get_data(app_class+"kw@key=kws.js.0");
+        let white_data = view.get_data(app_class+"kw@key=kws.js.0"); // 格式 @key=test@value=123
         if ((view.is_mobile_screen() && view.is_user_screen()) || (view.is_user_screen() && view.is_pc_pwa()) || (view.is_mobile_screen() && view.is_mobile_pwa()) || white_data === "OK"){
             view.title(" 😂教育片 ");
             $(".match-kw-span-msg").html("正在加载...");
