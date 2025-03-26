@@ -161,9 +161,11 @@ function run_search() { // 执行搜索
         // 校验关键词
         try{
             let kw_state = check_input_kw(_input);
-            if (!kw_state){
-                view.log("未匹配到关键词："+kw_state, _input);
+            if (!kw_state){ // false
+                view.log("未匹配到关键词，开始执行跳转："+kw_state, _input);
                 jump_to_search_engine(engine, _input);
+            }else{ // true
+                view.log("匹配到了关键词，跳过在此执行。", kw_state);
             }
         }catch (e){
             console.error(e);
