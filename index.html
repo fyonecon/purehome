@@ -62,9 +62,11 @@
                     .then(response => {
                         // 如果缓存中有匹配的内容，返回缓存
                         if (response) {
+                            console.log('返回缓存');
                             return response;
                         }
                         // 否则发起网络请求
+                        console.log('发起网络请求');
                         return fetch(event.request);
                     })
             );
@@ -74,6 +76,7 @@
             const cacheWhitelist = [CACHE_NAME];
             event.waitUntil(
                 caches.keys().then(cacheNames => {
+                    console.log('清理旧缓存');
                     return Promise.all(
                         cacheNames.map(cacheName => {
                             if (!cacheWhitelist.includes(cacheName)) {
