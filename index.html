@@ -22,8 +22,8 @@
         let time_error = 0; // ms。框架出错的时间戳
         const files_version = "2.8"; // 清除文件缓存
         const index_prefix = "app_"; // index文件中的参数前缀
-        const cdn_page_file = "//purehome-cc-cdn-1253444637.cos-website.na-siliconvalley.myqcloud.com/purehome.app-pages/"; // 自定义pages CDN地址，./
-        const cdn_depend_file = "//purehome-cc-cdn-1253444637.cos-website.na-siliconvalley.myqcloud.com/purehome.app-pages/"; // 自定义核心依赖CDN地址，./
+        const cdn_page_file = "./"; // 自定义pages CDN地址，./
+        const cdn_depend_file = "./"; // 自定义核心依赖CDN地址，./
         //
         const depend_css_array = [
             cdn_depend_file + "depend/depend.css",
@@ -36,6 +36,55 @@
             cdn_depend_file + "depend/view.js",
             cdn_page_file + "common/lang.js",
         ];
+        // 主动缓存策略
+        // 定义缓存名称
+        const CACHE_NAME = "?cache=" + files_version;
+        // 需要缓存的文件列表
+        const urlsToCache = [
+            '/',
+            ...depend_css_array,
+            ...depend_js_array
+        ];
+        // 安装 Service Worker 并缓存文件
+        self.addEventListener('install', event => {
+            event.waitUntil(
+                caches.open(CACHE_NAME)
+                    .then(cache => {
+                        console.log('打开缓存');
+                        return cache.addAll(urlsToCache);
+                    })
+            );
+        });
+        // 拦截网络请求并提供缓存
+        self.addEventListener('fetch', event => {
+            event.respondWith(
+                caches.match(event.request)
+                    .then(response => {
+                        // 如果缓存中有匹配的内容，返回缓存
+                        if (response) {
+                            return response;
+                        }
+                        // 否则发起网络请求
+                        return fetch(event.request);
+                    })
+            );
+        });
+        // 更新 Service Worker 时清理旧缓存
+        self.addEventListener('activate', event => {
+            const cacheWhitelist = [CACHE_NAME];
+            event.waitUntil(
+                caches.keys().then(cacheNames => {
+                    return Promise.all(
+                        cacheNames.map(cacheName => {
+                            if (!cacheWhitelist.includes(cacheName)) {
+                                return caches.delete(cacheName);
+                            }
+                        })
+                    );
+                })
+            );
+        });
+        //
         //
         const index_func = {
             AppRun: function  () { // 核心解析依赖
