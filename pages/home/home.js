@@ -76,16 +76,15 @@ function set_search(val) { // 配置当前的搜索引擎
 
 function create_input(pre, swiper_dom) { // 渲染模板
     // 搜索按钮
-    let search_btn_dom = '' +
-        //
+    let search_btn_dom =
         '<div class="search-btn-center do-btn-center must-btn select-none">' +
         '   <div class="search-btn-style history-btn-span click red" title="Clear History" data-clipboard-text=" ">'+view.language_txt("clear_history")+'</div>' +
         '   <div class="search-btn-style refresh-btn-span click " title="Rewrite Keywords" >'+view.language_txt("reenter")+'</div>' +
         '   <div class="search-btn-style search-btn-span click" title="Search"><i class="fas fa-search"></i>'+view.language_txt("search")+'</div>' +
         '   <div class="clear"></div>' +
-        '</div>' +
+        '</div>';
 
-        //
+    let search_swiper_btn_dom =
         '<div class="swiper-container select-none">' +
         '    <div class="swiper-wrapper">' +
         //--
@@ -101,13 +100,22 @@ function create_input(pre, swiper_dom) { // 渲染模板
         '    <div class="swiper-button-next hide"></div>' +
         '    <div class="swiper-button-prev hide"></div>' +
 
-        '</div>' +
-        //
-        '<div class="clear"></div>';
+        '</div>';
 
     // 输入框
     let content = document.getElementsByClassName("content")[0];
-    content.innerHTML = '<div class="input-div" id="input-div"><select class="select search-style div_theme select-none" id="select"></select><input type="text" value="" maxlength="1500" autocomplete="off" id="input" class="input search-style div_theme"  placeholder="' + pre + view.language_txt("input_placeholder") + '" title="Keywords"/><div class="clear"></div></div><div class="input-history-div" id="input-history"></div><div class="clear"></div><div class="search-btn-div" id="search-btn">'+search_btn_dom+'</div><div class="res-div"></div>';
+    content.innerHTML =
+        '<div class="input-div" id="input-div">' +
+        '   <select class="select search-style div_theme select-none" id="select"></select>' +
+        '   <input type="text" value="" maxlength="1500" autocomplete="off" id="input" class="input search-style div_theme"  placeholder="' + pre + view.language_txt("input_placeholder") + '" title="Keywords"/>' +
+        '   <div class="clear"></div>' +
+        '</div>' +
+        '<div class="search-btn-div" id="search-btn">'+search_btn_dom+'</div>' +
+        '<div class="clear"></div>' +
+        '<div class="input-history-div" id="input-history"></div>' +
+        '<div class="clear"></div>' +
+        '<div class="search-swiper-btn-div" id="search-swiper-btn">'+search_swiper_btn_dom+'</div>' +
+        '<div class="clear"></div>';
     let append_tag = [];
     for (let i = 0; i < search_data_default.length; i++) {
         let tag = '<option class="option option-' + i + '" value="' + i + '">' + search_data_default[i]["name"] + '</option>';
