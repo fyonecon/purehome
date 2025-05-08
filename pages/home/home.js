@@ -658,4 +658,5 @@ function hide_page(){
 
 function show_page(){
     view.log("前台状态，重新开启定时器");
+    show_history();
 }
