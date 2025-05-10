@@ -129,6 +129,21 @@ const pages = [
             },
         ],
     }, //
+    { // 页面模块-文档预览
+        "route"     : "docs",
+        "file_path" : "pages/docs/docs.view",
+        "title"     : "文档预览 ",
+        "file"      : [
+            {
+                "js": [
+                    "pages/docs/docs.js",
+                ],
+                "css": [
+                    "pages/docs/docs.css",
+                ],
+            },
+        ],
+    }, //
 
     //
 ];
