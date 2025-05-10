@@ -165,10 +165,16 @@ function show_info(){
     infos.forEach((info, index)=>{
         $(".div-box").append('<div class="div-line"><div class="div-title '+info.title_class+'">'+info.title+'</div><div class="div-value '+info.value_class+'">'+info.value+'</div><div class="clear"></div></div>');
     });
-    test_fetch(window.location.href).then(r => {});
+    test_fetch(window.location.href).then(array1 => {
+        test_fetch(cdn_page_file+"pages/home/home.css?cache="+files_version).then(array2 => {
+            // console.log(array2);
+        });
+    });
 }
 
+//
 function test_fetch(api){
+    $(".div-box").append('<hr/>');
     async function getData(api) {
         // const api = cdn_page_file+"pages/info/info.view?cache="+files_version;
         try {
@@ -199,7 +205,8 @@ function test_fetch(api){
                     '   <div class="clear"></div>' +
                     '</div>' +
                     '');
-            })
+            });
+            return [1, response];
         } catch (error) {
             $(".div-box").append('' +
                 '<div class="div-line">' +
@@ -208,6 +215,7 @@ function test_fetch(api){
                 '   <div class="clear"></div>' +
                 '</div>' +
                 '');
+            return [0, error.message];
         }
     }
     return getData(api);
