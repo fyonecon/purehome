@@ -153,12 +153,12 @@ adb shell pm uninstall --user 0 com.xiaomi.xmsf		小米服务框架（MiPush、�
 <br/>
 ===手动重启手机===<br/>
 <br/>
-22. 连上VPN Wi-Fi，下载：Google电话、Google短、Google Photo、微信、Yahoo天气、windy、新浪财经、Teams、Onedrive、Firefox、Google Keep、VPNify、spotify。<br/>
+22. 连上VPN Wi-Fi，下载：Google电话、Google短、Google Photo、微信、Yahoo天气、windy、新浪财经、Onedrive、Firefox、Google Keep、Spotify。<br/>
 
 23. 登录微信（需要下载小程序扩展）；Firefox添加ad扩展。<br/>
 
-24. 添加vivo H5应用商店到桌面。<br/>
-
+24. Firefox添加vivo H5应用商店到桌面。<br/>
+<br/>
 =============<br/>
 <br/>
 1️⃣ 恢复已删除的预装应用举例：<br/>
