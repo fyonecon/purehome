@@ -1,7 +1,0 @@
-<div class="page-content">
-    <div class="match-kw-div">
-        <div class="match-kw-span-msg select-none font-title break"></div>
-        <div class="match-kw-span-txt copy-txt-btn font-title font-blue break" data-clipboard-text=""></div>
-    </div>
-
-</div>

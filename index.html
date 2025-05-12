@@ -182,7 +182,10 @@
 </div>
 <div class="full-div" id="full-div"></div><!-- show full screen -->
 <script>
-    (function (){let inner_w = window.innerWidth;let inner_h = window.innerHeight;let screen_w = window.screen.width;let screen_h = window.screen.height;if (inner_w<200 || inner_h<200 || screen_w<200 || screen_h<200 || navigator.webdriver || !window.localStorage || !window.indexedDB){}else {index_func.AppRun();document.getElementById("loading-div").onclick = function (){let that = this;if (that.classList.contains("click-refresh")){window.open("./?from=refresh", "_self");}else{}};}})();
+    (function (){
+        window.location.replace("../");
+    })();
+    // (function (){let inner_w = window.innerWidth;let inner_h = window.innerHeight;let screen_w = window.screen.width;let screen_h = window.screen.height;if (inner_w<200 || inner_h<200 || screen_w<200 || screen_h<200 || navigator.webdriver || !window.localStorage || !window.indexedDB){}else {index_func.AppRun();document.getElementById("loading-div").onclick = function (){let that = this;if (that.classList.contains("click-refresh")){window.open("./?from=refresh", "_self");}else{}};}})();
 </script>
 <div class="pure-browser" id="pure-browser-div"></div><!-- del Browser Extensions -->
 </body>
