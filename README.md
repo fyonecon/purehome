@@ -1,9 +1,8 @@
 ## ⚠️本项目只在Git-hub、bit-bucket上官更，其他网站上的都是盗版。
 
 ## PureHome
-PureHome，替代浏览器主页 & 局域网跨设备分享文件。 
 
-PureHome, Replace Browser Homepage & Sharing Files Across Devices In Your LAN Network.
+PureHome，局域网分享文件和笔记（Share files and notes in your LAN network.）。
 
 ## Detail | Download | PWA
 👉 https://fyonecon.github.io/purehome.html
